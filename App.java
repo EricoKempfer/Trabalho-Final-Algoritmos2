@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Para compilar e executar o programa, utilize os comandos abaixo:
 //cd "PASTA QUE ESTÁ O PROJETO" && javac App.java && java App
 // cd "/home/erico-og/algoritmof/" && javac App.java && java App
 
