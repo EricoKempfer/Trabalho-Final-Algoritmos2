@@ -16,7 +16,7 @@ public class Motorista {
         this.onTrip = false;
     }
 
-    // Getters e Setters
+    // Getters, Setters
     public int getDriverId() { return driverId; }
     public String getDriverName() { return driverName; }
     public void setDriverName(String driverName) { this.driverName = driverName; }
