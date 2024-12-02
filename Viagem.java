@@ -9,7 +9,7 @@ public class Viagem {
   private List<Produto> productList;
   private Motorista driver;
   private Cliente customer;
-  private String tripStatus; // "Iniciada" ou "Finalizada"
+  private String tripStatus;
 
   public Viagem(String tripDescription, String originCity, String destinationCity,
     List<Produto> productList, Motorista driver, Cliente customer) {
