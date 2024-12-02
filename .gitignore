@@ -1,0 +1,14 @@
+# Arquivos compilados em Java
+*.class
+
+# Arquivos específicos que você mencionou
+.App.class
+.Cliente.class
+.Gestor.class
+.GestorClientes.class
+.GestorMotoristas.class
+.GestorProdutos.class
+.GestorViagens.class
+.Motorista.class
+.Produto.class
+.Viagem.class
