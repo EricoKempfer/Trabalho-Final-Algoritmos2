@@ -1,54 +1,54 @@
 import java.util.List;
 
 public class Viagem {
-  private static int contadorId = 1;
-  private int id;
-  private String descricao;
-  private String cidadeOrigem;
-  private String cidadeDestino;
-  private List<Produto> produtos;
-  private Motorista motorista;
-  private Cliente cliente;
-  private String status; // "Iniciada" ou "Finalizada"
+  private static int idCounter = 1;
+  private int tripId;
+  private String tripDescription;
+  private String originCity;
+  private String destinationCity;
+  private List<Produto> productList;
+  private Motorista driver;
+  private Cliente customer;
+  private String tripStatus; // "Iniciada" ou "Finalizada"
 
-  public Viagem(String descricao, String cidadeOrigem, String cidadeDestino,
-    List<Produto> produtos, Motorista motorista, Cliente cliente) {
-  this.id = contadorId++;
-  this.descricao = descricao;
-  this.cidadeOrigem = cidadeOrigem;
-  this.cidadeDestino = cidadeDestino;
-  this.produtos = produtos;
-  this.motorista = motorista;
-  this.cliente = cliente;
-  this.status = "Iniciada";
+  public Viagem(String tripDescription, String originCity, String destinationCity,
+    List<Produto> productList, Motorista driver, Cliente customer) {
+  this.tripId = idCounter++;
+  this.tripDescription = tripDescription;
+  this.originCity = originCity;
+  this.destinationCity = destinationCity;
+  this.productList = productList;
+  this.driver = driver;
+  this.customer = customer;
+  this.tripStatus = "Iniciada";
 }
 
     // Getters e Setters
-    public int getId() { return id; }
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
-    public String getCidadeOrigem() { return cidadeOrigem; }
-    public void setCidadeOrigem(String cidadeOrigem) { this.cidadeOrigem = cidadeOrigem; }
-    public String getCidadeDestino() { return cidadeDestino; }
-    public void setCidadeDestino(String cidadeDestino) { this.cidadeDestino = cidadeDestino; }
-    public List < Produto > getProdutos() { return produtos; }
-    public void setProdutos(List < Produto > produtos) { this.produtos = produtos; }
-    public Motorista getMotorista() { return motorista; }
-    public void setMotorista(Motorista motorista) { this.motorista = motorista; }
-    public Cliente getCliente() { return cliente; }
-    public void setCliente(Cliente cliente) { this.cliente = cliente; }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public int getTripId() { return tripId; }
+    public String getTripDescription() { return tripDescription; }
+    public void setTripDescription(String tripDescription) { this.tripDescription = tripDescription; }
+    public String getOriginCity() { return originCity; }
+    public void setOriginCity(String originCity) { this.originCity = originCity; }
+    public String getDestinationCity() { return destinationCity; }
+    public void setDestinationCity(String destinationCity) { this.destinationCity = destinationCity; }
+    public List < Produto > getProductList() { return productList; }
+    public void setProductList(List < Produto > productList) { this.productList = productList; }
+    public Motorista getDriver() { return driver; }
+    public void setDriver(Motorista driver) { this.driver = driver; }
+    public Cliente getCustomer() { return customer; }
+    public void setCustomer(Cliente customer) { this.customer = customer; }
+    public String getTripStatus() { return tripStatus; }
+    public void setTripStatus(String tripStatus) { this.tripStatus = tripStatus; }
 
 @Override
 public String toString() {
-  return "ID: " + id + ", Descrição: " + descricao +
-    ", Cidade Origem: " + cidadeOrigem + ", Cidade Destino: " + cidadeDestino +
-    ", Motorista: " + motorista.getNome() +
-    ", Cliente: " + cliente.getNome() +
-    ", Status: " + status +
-    ", Produtos: " + produtos.stream()
-      .map(Produto::getNome)
+  return "ID: " + tripId + ", Descrição: " + tripDescription +
+    ", Cidade Origem: " + originCity + ", Cidade Destino: " + destinationCity +
+    ", Motorista: " + driver.getDriverName() +
+    ", Cliente: " + customer.getCustomerName() +
+    ", Status: " + tripStatus +
+    ", Produtos: " + productList.stream()
+      .map(Produto::getProductName)
       .toList().toString();
 }
 }

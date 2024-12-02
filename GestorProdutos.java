@@ -5,17 +5,17 @@ public class GestorProdutos extends Gestor<Produto> {
     @Override
     protected Produto criarEntidade(Scanner scanner) {
         System.out.print("Digite o nome do produto: ");
-        String nome = scanner.nextLine();
+        String productName = scanner.nextLine();
         System.out.print("Digite a quantidade: ");
-        int quantidade = scanner.nextInt();
+        int productQuantity = scanner.nextInt();
         scanner.nextLine(); // Limpar o buffer
-        return new Produto(nome, quantidade);
+        return new Produto(productName, productQuantity);
     }
 
     @Override
     protected Produto buscarPorId(int id) {
         return entidades.stream()
-                .filter(produto -> produto.getId() == id)
+                .filter(produto -> produto.getProductId() == id)
                 .findFirst()
                 .orElse(null);
     }
@@ -23,7 +23,7 @@ public class GestorProdutos extends Gestor<Produto> {
     @Override
     protected Produto buscarPorNome(String nome) {
         return entidades.stream()
-                .filter(produto -> produto.getNome().equalsIgnoreCase(nome))
+                .filter(produto -> produto.getProductName().equalsIgnoreCase(nome))
                 .findFirst()
                 .orElse(null);
     }
@@ -43,16 +43,16 @@ public class GestorProdutos extends Gestor<Produto> {
 
         switch (opcao) {
             case 1:
-                System.out.print("Digite o novo nome (atual: " + produto.getNome() + "): ");
-                String nome = scanner.nextLine();
-                produto.setNome(nome);
+                System.out.print("Digite o novo nome (atual: " + produto.getProductName() + "): ");
+                String productName = scanner.nextLine();
+                produto.setProductName(productName);
                 System.out.println("Nome atualizado!");
                 break;
             case 2:
-                System.out.print("Digite a nova quantidade (atual: " + produto.getQuantidade() + "): ");
-                int quantidade = scanner.nextInt();
+                System.out.print("Digite a nova quantidade (atual: " + produto.getProductQuantity() + "): ");
+                int productQuantity = scanner.nextInt();
                 scanner.nextLine(); // Limpar o buffer
-                produto.setQuantidade(quantidade);
+                produto.setProductQuantity(productQuantity);
                 System.out.println("Quantidade atualizada!");
                 break;
             case 3:

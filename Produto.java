@@ -1,24 +1,24 @@
 public class Produto {
-    private static int contadorId = 1;
-    private int id;
-    private String nome;
-    private int quantidade;
+    private static int productIdCounter = 1;
+    private int productId;
+    private String productName;
+    private int productQuantity;
 
-    public Produto(String nome, int quantidade) {
-        this.id = contadorId++;
-        this.nome = nome;
-        this.quantidade = quantidade;
+    public Produto(String productName, int productQuantity) {
+        this.productId = productIdCounter++;
+        this.productName = productName;
+        this.productQuantity = productQuantity;
     }
 
     // Getters e Setters
-    public int getId() { return id; }
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
-    public int getQuantidade() { return quantidade; }
-    public void setQuantidade(int quantidade) { this.quantidade = quantidade; }
+    public int getProductId() { return productId; }
+    public String getProductName() { return productName; }
+    public void setProductName(String productName) { this.productName = productName; }
+    public int getProductQuantity() { return productQuantity; }
+    public void setProductQuantity(int productQuantity) { this.productQuantity = productQuantity; }
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Nome: " + nome + ", Quantidade: " + quantidade;
+        return "ID: " + productId + ", Nome: " + productName + ", Quantidade: " + productQuantity;
     }
 }

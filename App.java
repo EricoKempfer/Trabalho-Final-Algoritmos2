@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) {
         int opcao;
         do {
-            System.out.println("\n--- Sistema de Gestão de Transporte de Carga ---");
+            System.out.println("\n(=== CRUD para Gestão de Transporte de Carga ===)");
             System.out.println("1. Gerenciar Clientes");
             System.out.println("2. Gerenciar Motoristas");
             System.out.println("3. Gerenciar Produtos");
@@ -65,8 +65,8 @@ public class App {
             opcao = scanOption();
 
             switch (opcao) {
-                case 1 -> gestorViagens.iniciarViagem(scanner);
-                case 2 -> gestorViagens.finalizarViagem(scanner);
+                case 1 -> gestorViagens.startTrip(scanner);
+                case 2 -> gestorViagens.endTrip(scanner);
                 case 0 -> System.out.println("Voltando...");
                 default -> System.out.println("Opção inválida!");
             }

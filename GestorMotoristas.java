@@ -5,20 +5,20 @@ public class GestorMotoristas extends Gestor<Motorista> {
     @Override
     protected Motorista criarEntidade(Scanner scanner) {
         System.out.print("Digite o nome do motorista: ");
-        String nome = scanner.nextLine();
+        String driverName = scanner.nextLine();
         System.out.print("Digite o CPF: ");
-        String cpf = scanner.nextLine();
+        String driverCpf = scanner.nextLine();
         System.out.print("Digite a CNH: ");
-        String cnh = scanner.nextLine();
+        String driverCnh = scanner.nextLine();
         System.out.print("Digite a cidade: ");
-        String cidade = scanner.nextLine();
-        return new Motorista(nome, cpf, cnh, cidade);
+        String driverCity = scanner.nextLine();
+        return new Motorista(driverName, driverCpf, driverCnh, driverCity);
     }
 
     @Override
     protected Motorista buscarPorId(int id) {
         return entidades.stream()
-                .filter(motorista -> motorista.getId() == id)
+                .filter(motorista -> motorista.getDriverId() == id)
                 .findFirst()
                 .orElse(null);
     }
@@ -26,7 +26,7 @@ public class GestorMotoristas extends Gestor<Motorista> {
     @Override
     protected Motorista buscarPorNome(String nome) {
         return entidades.stream()
-                .filter(motorista -> motorista.getNome().equalsIgnoreCase(nome))
+                .filter(motorista -> motorista.getDriverName().equalsIgnoreCase(nome))
                 .findFirst()
                 .orElse(null);
     }
@@ -48,27 +48,27 @@ public class GestorMotoristas extends Gestor<Motorista> {
 
         switch (opcao) {
             case 1:
-                System.out.print("Digite o novo nome (atual: " + motorista.getNome() + "): ");
-                String nome = scanner.nextLine();
-                motorista.setNome(nome);
+                System.out.print("Digite o novo nome (atual: " + motorista.getDriverName() + "): ");
+                String driverName = scanner.nextLine();
+                motorista.setDriverName(driverName);
                 System.out.println("Nome atualizado!");
                 break;
             case 2:
-                System.out.print("Digite o novo CPF (atual: " + motorista.getCpf() + "): ");
-                String cpf = scanner.nextLine();
-                motorista.setCpf(cpf);
+                System.out.print("Digite o novo CPF (atual: " + motorista.getDriverCpf() + "): ");
+                String driverCpf = scanner.nextLine();
+                motorista.setDriverCpf(driverCpf);
                 System.out.println("CPF atualizado!");
                 break;
             case 3:
-                System.out.print("Digite a nova CNH (atual: " + motorista.getCnh() + "): ");
-                String cnh = scanner.nextLine();
-                motorista.setCnh(cnh);
+                System.out.print("Digite a nova CNH (atual: " + motorista.getDriverCnh() + "): ");
+                String driverCnh = scanner.nextLine();
+                motorista.setDriverCnh(driverCnh);
                 System.out.println("CNH atualizada!");
                 break;
             case 4:
-                System.out.print("Digite a nova cidade (atual: " + motorista.getCidade() + "): ");
-                String cidade = scanner.nextLine();
-                motorista.setCidade(cidade);
+                System.out.print("Digite a nova cidade (atual: " + motorista.getDriverCity() + "): ");
+                String driverCity = scanner.nextLine();
+                motorista.setDriverCity(driverCity);
                 System.out.println("Cidade atualizada!");
                 break;
             case 5:
