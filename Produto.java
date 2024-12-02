@@ -10,7 +10,7 @@ public class Produto {
         this.productQuantity = productQuantity;
     }
 
-    // Getters e Setters
+    // Getters, Setters
     public int getProductId() { return productId; }
     public String getProductName() { return productName; }
     public void setProductName(String productName) { this.productName = productName; }
