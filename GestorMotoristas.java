@@ -44,7 +44,7 @@ public class GestorMotoristas extends Gestor<Motorista> {
         System.out.println("5. Sair");
         System.out.print("Opção: ");
         int opcao = scanner.nextInt();
-        scanner.nextLine(); // Limpar o buffer
+        scanner.nextLine(); // Limpa o buffer
 
         switch (opcao) {
             case 1:
